@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "iojs"
+  - "7"
+  - "6"
+install:
+  - npm install
+script:
+  - npm test
+addons:
+    code_climate:
+        repo_token: 0e92b0a1ab19264746d99b9a7fdd9000d4f52708636aad72c5ab4ee4d4f5848e
