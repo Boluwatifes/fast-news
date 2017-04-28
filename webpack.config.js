@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 
+const path = require('path');
+
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const debug = process.env.NODE_ENV !== 'production';
@@ -21,18 +23,28 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css!sass'),
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          //resolve-url-loader may be chained before sass-loader if necessary
+          use: ['css-loader', 'sass-loader']
+        }),
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=100000'
       },
     ],
   },
   output: {
-    path: `${__dirname}/app`,
+    path: `${__dirname}/public/js`,
     filename: 'scripts.min.js',
   },
-  plugins: debug ? [] : [
+  plugins: debug ? [
+    new ExtractTextPlugin(`../css/style.css`),
+  ] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-    new ExtractTextPlugin('public/style.css', { allChunks: true }),
+    new ExtractTextPlugin({ filename: `./public/css/style.css`,  allChunks: true }),
   ],
 };
