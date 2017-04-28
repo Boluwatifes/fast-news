@@ -7,9 +7,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const debug = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  context: path.join(__dirname, 'app'),
+  context: __dirname,
   devtool: debug ? 'inline-sourcemap' : null,
-  entry: './js/scripts.js',
+  entry: './app/js/scripts.js',
   module: {
     loaders: [
       {
@@ -28,7 +28,7 @@ module.exports = {
     ],
   },
   output: {
-    path: `${__dirname}/js`,
+    path: `${__dirname}/app/js`,
     filename: 'scripts.min.js',
   },
   plugins: debug ? [] : [
