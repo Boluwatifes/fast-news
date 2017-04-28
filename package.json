@@ -4,7 +4,9 @@
   "description": "Fast news provide an efficient way to keep track of all the trending news headline at your comfort",
   "main": "app.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "build": "webpack -p",
+    "start": "webpack-dev-server --content-base public --hot --progress --colors --inline"
   },
   "repository": {
     "type": "git",
@@ -40,6 +42,7 @@
   },
   "devDependencies": {
     "codecov": "^1.0.0",
+    "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
@@ -47,7 +50,12 @@
     "eslint-plugin-react": "^6.10.3",
     "expect.js": "^0.3.1",
     "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
     "istanbul": "^0.3.2",
-    "mocha": "^2.1.0"
+    "mocha": "^2.1.0",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8"
   }
 }
