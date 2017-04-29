@@ -1,3 +1,5 @@
+const jQuery = require('jquery');
+
 (function ($) {
 
   var methods = {
