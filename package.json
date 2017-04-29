@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha test",
-    "build": "webpack -p",
-    "start": "node webpack-dev-server --content-base public --hot --progress --colors --inline"
+    "build": "NODE_ENV=production webpack --config  --progress --colors",
+    "start": "node public/index.html "
   },
   "repository": {
     "type": "git",
