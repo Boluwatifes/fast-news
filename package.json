@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha test",
     "build": "webpack -p",
-    "start": "./node_modules/.bin/webpack-dev-server --content-base public --hot --progress --colors --inline"
+    "start": "node webpack-dev-server --content-base public --hot --progress --colors --inline"
   },
   "repository": {
     "type": "git",
