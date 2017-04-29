@@ -33,7 +33,14 @@ module.exports = {
         test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'url-loader?limit=100000'
       },
+      { test: /\.json$/, loader: 'json-loader' },
     ],
+  },
+  node: {
+    console: true,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
   },
   output: {
     path: `${__dirname}/public/js`,
@@ -41,10 +48,24 @@ module.exports = {
   },
   plugins: debug ? [
     new ExtractTextPlugin(`../css/style.css`),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.$': 'jquery',
+      'window.jQuery': 'jquery',
+      "Hammer": "hammerjs/hammer"
+    }),
   ] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-    new ExtractTextPlugin({ filename: `./public/css/style.css`,  allChunks: true }),
+    new ExtractTextPlugin({ filename: `../css/style.css`,  allChunks: true }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.$': 'jquery',
+      'window.jQuery': 'jquery',
+      "Hammer": "hammerjs/hammer"
+    }),
   ],
 };
