@@ -6,7 +6,7 @@ class NewsStore extends EventEmitter {
     super();
     this.nSource = [];
     request({
-      url: " https://newsapi.org/v1/sources?language=en",
+      url: ' https://newsapi.org/v1/sources?language=en',
       qs: {
         apiKey: process.env.NEWS_API || '213327409d384371851777e7c7f78dfe',
       },
@@ -17,7 +17,7 @@ class NewsStore extends EventEmitter {
       } else {
         const bodyObj = JSON.parse(body).sources;
         bodyObj.forEach((eachSource) => {
-          let source = {};
+          const source = {};
           source.id = eachSource.id;
           source.name = eachSource.name;
           source.description = eachSource.description;
@@ -36,6 +36,6 @@ class NewsStore extends EventEmitter {
   }
 }
 
-const newsStore = new NewsStore;
+const newsStore = new NewsStore();
 
 export default newsStore;
