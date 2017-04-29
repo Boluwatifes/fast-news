@@ -13,8 +13,6 @@ app.set('views', path.join(__dirname, '/public/views'));
 
 app.use(Express.static(path.join(__dirname, 'public')));
 
-app.listen(process.env.PORT || 8000);
-
 // universal routing and rendering
 app.get('*', (req, res) => {
   const context = {}
@@ -38,7 +36,7 @@ app.get('*', (req, res) => {
 });
 
 // start the server
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 const env = process.env.NODE_ENV || 'production';
 server.listen(port, err => {
   if (err) {
