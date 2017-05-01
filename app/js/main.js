@@ -11,10 +11,8 @@ import './functions.js';
 
 const app = document.getElementById('app');
 
-window.onload = () => {
-  ReactDom.render(
-    <Router>
-      <Layout />
-    </Router>, app,
-  );
-};
+ReactDom.render(
+  <Router>
+    <Layout />
+  </Router>, app,
+);

@@ -41,10 +41,6 @@ nav{
 
 .home-div{
   height: auto;
-  background: url('../../img/news_a.png');
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
   position: relative;
   display: flex;
 
@@ -52,7 +48,7 @@ nav{
     @extend .valign-wrapper;
     min-height: 87vh;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #fff;
     padding: $myPadding;
 
     .inner-content{

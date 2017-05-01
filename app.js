@@ -1,5 +1,5 @@
-import ReactDOMServer from 'react-dom/server'
-import { StaticRouter } from 'react-router'
+import ReactDOMServer from 'react-dom/server';
+import { StaticRouter } from 'react-router';
 import path from 'path';
 import { Server } from 'http';
 import Express from 'express';

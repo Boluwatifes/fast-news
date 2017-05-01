@@ -6,7 +6,7 @@ export default class Nav extends React.Component {
     return (
       <nav className="h-auto p-10">
         <div className="nav-wrapper">
-          <a href="#!" className="brand-logo">Logo</a>
+          <Link className="brand-logo" to="/">Fast News</Link>
           <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
           <ul className="right hide-on-med-and-down">
             <li><Link to="/login">Get Started</Link></li>
