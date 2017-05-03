@@ -64,21 +64,23 @@ export default class Portal extends React.Component {
     return (
       <div className="col s12">
         <div className="row" id="replaceMe">
-          <div className="col s12 m3 l3" />
-          <div className="col s12 m9 l9">
-            <div className="col s-12">
-              <div className="input-field col s12">
-                <select>
-                  <option value="" disabled selected>Select News Source</option>
-                  {this.state.sources}
-                </select>
-              </div>
-            </div>
-
-            <div className="col s-12">
-              {this.state.content}
+          <div className="col s12 m3 l3">
+            <div className="input-field col s12">
+              <select defaultValue="bbc-news">
+                <option value="">Select News Source</option>
+                {this.state.sources}
+              </select>
+              <label>Dont be silly </label>
             </div>
           </div>
+          <div className="col s12 m9 l9">
+            <div className="col s-12">
+              {this.state.content}
+              <div className="clear" />
+            </div>
+            <div className="clear" />
+          </div>
+          <div className="clear" />
         </div>
         <div className="clear" />
       </div>
